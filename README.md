@@ -88,8 +88,7 @@ int find_max(int arr[], int n);
 
 #endif
 ```
-
-      ** 步骤 **：
+ ** 步骤 **：
 
    * `gcc -c tool.c` 生成tool.o
 
@@ -132,7 +131,7 @@ prerequisites:依赖文件
 command:make要执行的命令
 反斜杠可以作为换行符
 
-```cmake
+```make
 main: main.o tool.o
 gcc main.o tool.o -o main
 .PHONY:clean
@@ -140,7 +139,7 @@ clean:
 -rm main *.o
 ```
 * makefile中的变量：
-```cmake
+```make
 objects = main.o tool.o
 main: $(objects)
 gcc $(objects) -o main
@@ -187,7 +186,7 @@ gcc main.o tool.o -o main
 clean:
 -rm main *.o
 ```
-      命令窗口执行：
+ 命令窗口执行：
 ```
 make clean
 make
@@ -195,7 +194,7 @@ make
 ```
 
 * 使用变量：
-```cmake
+```make
 objects = main.o tool.o
 main: $(objects)
 gcc $(objects) -o main
@@ -205,7 +204,7 @@ clean:
 ```
 
 * 使用函数：
-```cmake
+```make
 # 函数名是func
 define func
 $(info "hello")
@@ -223,7 +222,7 @@ clean:
 ```
 
 * 带参数函数：
-```cmake
+```make
 define func1
 $(info $(1) $(2))
 endef
@@ -244,25 +243,25 @@ clean:
 apk,java库(.jar),c/c++应用程序，c/c++静态库(.a), c/c++动态库(.so)
 
 ##### 规则：
-      定义模块当前路径（必须定义在文件开头，只需定义一次，my-dir是规定写法） 
-```cmake
+ # 定义模块当前路径（必须定义在文件开头，只需定义一次，my-dir是规定写法） 
+```make
 LOCAL_PATH := $(call my-dir)
 ```
-      清空当前环境变量（ LOCAL_PATH 除外）
-```
+ # 清空当前环境变量（ LOCAL_PATH 除外）
+```make
 include $(CLEAR_VARS)
 ```
-      ＃当前模块名（这里会生成 libhello-jni.so)
-```
+ ＃当前模块名（这里会生成 libhello-jni.so)
+```make
 LOCAL_MODULE := hello-jni
 ```
 
-      ＃当前模块包含的源代码文件
-```
+ ＃当前模块包含的源代码文件
+```make
 LOCAL_SRC_FILES := hello-jni.c  poll.c xxx.c
 ```
-      ＃表示当前模圳容被编译成一个共享库
-```
+ ＃表示当前模圳容被编译成一个共享库
+```make
 include $(BUILD_SHARED_LIBRARY)
 ```
 
