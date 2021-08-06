@@ -162,12 +162,11 @@ include foo.make a.mk b.mk c.mk e.mk f.mk
 -include <filename>
 ```
 
+* makefile预定义变量
+![makefile预定义变量](https://user-images.githubusercontent.com/36436771/128516079-85e7b97e-0aa8-4a34-af1f-2529016ce3b2.png)
 
-[makefile预定义变量.png]
-
-[makefile自定变量。png]
-
-[makefile函数.png]
+* makefile自定变量
+![makefile自定变量](https://user-images.githubusercontent.com/36436771/128516165-09150d71-071b-44ae-8c42-b5554c7cdccd.png)
 
 * 普通用法：
 ```
@@ -242,12 +241,12 @@ clean:
 是一个向Android NDK 构建系统描述项目的GNU makefile片段，可编译生成：
 apk,java库(.jar),c/c++应用程序，c/c++静态库(.a), c/c++动态库(.so)
 
-##### 规则：
- # 定义模块当前路径（必须定义在文件开头，只需定义一次，my-dir是规定写法） 
+	** 规则：**
+ 	定义模块当前路径（必须定义在文件开头，只需定义一次，my-dir是规定写法） 
 ```make
 LOCAL_PATH := $(call my-dir)
 ```
- # 清空当前环境变量（ LOCAL_PATH 除外）
+ 	清空当前环境变量（ LOCAL_PATH 除外）
 ```make
 include $(CLEAR_VARS)
 ```
@@ -264,10 +263,14 @@ LOCAL_SRC_FILES := hello-jni.c  poll.c xxx.c
 ```make
 include $(BUILD_SHARED_LIBRARY)
 ```
+![示例](https://user-images.githubusercontent.com/36436771/128515655-191e9aa5-d0bd-4830-884c-38ae690dbebd.png)
 
-[多模块共享库.png]
-[共享模块.png]
-[预编译库.png]
+#### 四、其他
+![多模块共享库](https://user-images.githubusercontent.com/36436771/128515779-5dd869df-d137-4fb1-947b-bebcc48c11f1.png)
+
+![共享模块](https://user-images.githubusercontent.com/36436771/128515901-4e334303-52f2-40d8-bd9b-e843b4e28caa.png)
+
+![预编译库](https://user-images.githubusercontent.com/36436771/128515949-2efa8795-25b5-4681-89f8-14c460012a10.png)
 
 
 
