@@ -269,16 +269,9 @@ include $(BUILD_SHARED_LIBRARY)
 ![多模块共享库](https://user-images.githubusercontent.com/36436771/128515779-5dd869df-d137-4fb1-947b-bebcc48c11f1.png)
 
 ![共享模块](https://user-images.githubusercontent.com/36436771/128515901-4e334303-52f2-40d8-bd9b-e843b4e28caa.png)
-
+	
+> 如果想使用已经编译好的库。android6.0之前如果A.so依赖于B.so，则要代码加载的时候先加载B.so,再加载A.so,而在6.0之后预编译动态库不允许加载，静态库仍然可以依赖加载
 ![预编译库](https://user-images.githubusercontent.com/36436771/128515949-2efa8795-25b5-4681-89f8-14c460012a10.png)
-
-
-
-
-
-
-
-
 
 
 
